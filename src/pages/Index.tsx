@@ -1,6 +1,6 @@
 
 import Header from '@/components/Header';
-import HeroSection from '@/components/HeroSection';
+import HeroCarousel from '@/components/HeroCarousel';
 import TrustedBrands from '@/components/TrustedBrands';
 import ValueProposition from '@/components/ValueProposition';
 import StatsSection from '@/components/StatsSection';
@@ -8,12 +8,14 @@ import FeatureCards from '@/components/FeatureCards';
 import ServicesGrid from '@/components/ServicesGrid';
 import PositioningSection from '@/components/PositioningSection';
 import Footer from '@/components/Footer';
+import WhatsAppFloat from '@/components/WhatsAppFloat';
+import LeadGenPopup from '@/components/LeadGenPopup';
 
 const Index = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      <HeroSection />
+      <HeroCarousel />
       <TrustedBrands />
       <ValueProposition />
       <StatsSection />
@@ -21,6 +23,8 @@ const Index = () => {
       <ServicesGrid />
       <PositioningSection />
       <Footer />
+      <WhatsAppFloat />
+      <LeadGenPopup />
     </div>
   );
 };
