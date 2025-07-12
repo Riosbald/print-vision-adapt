@@ -3,7 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Kween Prints Design System - Based on Superside Analysis */
+/* Kween Prints Design System - Enhanced */
 
 @layer base {
   :root {
@@ -40,17 +40,17 @@
     --input: 214 31% 91%;
     --ring: 180 25% 24%;
 
-    /* Light Background: #F8F9FA */
+    /* Enhanced Color Palette */
     --light-bg: 210 17% 98%;
-    
-    /* Orange Accent: #FF6B47 */
     --orange-accent: 12 100% 64%;
-    
-    /* Blue Accent: #3498DB */
     --blue-accent: 204 70% 53%;
-    
-    /* Red Accent: #E74C3C */
     --red-accent: 6 78% 57%;
+    --emerald-accent: 160 84% 39%;
+    --purple-accent: 262 83% 58%;
+    --amber-accent: 43 96% 56%;
+    --indigo-accent: 239 84% 67%;
+    --rose-accent: 330 81% 60%;
+    --slate-accent: 215 28% 17%;
 
     --radius: 0.5rem;
   }
@@ -85,10 +85,25 @@
     @apply bg-background text-foreground;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   }
+
+  /* Enhanced Typography */
+  .font-serif {
+    font-family: 'Instrument Serif', 'Georgia', serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
 }
 
-/* Custom utility classes */
+/* Enhanced utility classes */
 @layer utilities {
+  /* Color utilities using semantic tokens */
   .bg-primary-dark {
     background-color: hsl(var(--primary));
   }
@@ -108,12 +123,132 @@
   .border-accent-lime {
     border-color: hsl(var(--accent-lime));
   }
-  
+
+  /* Enhanced service color utilities */
+  .bg-emerald-accent {
+    background-color: hsl(var(--emerald-accent));
+  }
+
+  .bg-blue-accent {
+    background-color: hsl(var(--blue-accent));
+  }
+
+  .bg-amber-accent {
+    background-color: hsl(var(--amber-accent));
+  }
+
+  .bg-purple-accent {
+    background-color: hsl(var(--purple-accent));
+  }
+
+  .bg-indigo-accent {
+    background-color: hsl(var(--indigo-accent));
+  }
+
+  .bg-rose-accent {
+    background-color: hsl(var(--rose-accent));
+  }
+
+  .bg-slate-accent {
+    background-color: hsl(var(--slate-accent));
+  }
+
+  .bg-orange-accent {
+    background-color: hsl(var(--orange-accent));
+  }
+
+  /* Animation utilities */
   .hover-lift {
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   }
   
   .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+
+  .hover-scale {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+
+  /* Card enhancements */
+  .card-hover {
+    transition: all 0.3s ease-in-out;
+  }
+
+  .card-hover:hover {
     transform: translateY(-2px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Gradient utilities */
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent-lime)) 100%);
+  }
+
+  .gradient-services {
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+  }
+
+  /* Text utilities */
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Focus utilities */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary;
+  }
+
+  /* Spacing utilities */
+  .section-padding {
+    @apply py-20 lg:py-32;
+  }
+
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* Component-specific styles */
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 focus-ring;
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-200;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80 focus-ring;
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-200;
+  }
+
+  .btn-outline {
+    @apply border border-primary text-primary hover:bg-primary hover:text-primary-foreground focus-ring;
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-200;
+  }
+
+  .service-card {
+    @apply p-8 rounded-2xl text-white cursor-pointer group;
+    @apply hover:scale-105 transition-transform duration-300;
+  }
+
+  .service-card-icon {
+    @apply mb-6 group-hover:scale-110 transition-transform duration-300;
+  }
+
+  .section-header {
+    @apply text-center mb-16;
+  }
+
+  .section-eyebrow {
+    @apply text-sm font-semibold text-accent-lime uppercase tracking-wide mb-4;
+  }
+
+  .section-title {
+    @apply text-3xl lg:text-4xl font-serif text-gray-900 mb-8 text-balance;
   }
 }
