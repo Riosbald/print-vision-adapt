@@ -1,6 +1,8 @@
 
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
+import TrustedBrands from '@/components/TrustedBrands';
+import ValueProposition from '@/components/ValueProposition';
 import StatsSection from '@/components/StatsSection';
 import FeatureCards from '@/components/FeatureCards';
 import ServicesGrid from '@/components/ServicesGrid';
@@ -12,6 +14,8 @@ const Index = () => {
     <div className="min-h-screen">
       <Header />
       <HeroSection />
+      <TrustedBrands />
+      <ValueProposition />
       <StatsSection />
       <FeatureCards />
       <ServicesGrid />
